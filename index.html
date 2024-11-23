@@ -1,13 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <br>
+  <input id="inputVal" type="text" placeholder="text">
+  <h1 id="head"></h1>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
+<script>
+  let head = document.getElementById('head');
+  let submitVal = document.getElementById('inputVal');
+  submitVal.addEventListener('input', getFun)
+
+  let id;
+  function getFun() {
+    if (id) {
+      head.textContent = "Typing....";
+      clearInterval(id)
+    }
+    id = setInterval(() => {
+      console.log('vinay')
+      head.textContent = "";
+      clearInterval(id);
+    }, 1000)
+  }
+</script>
