@@ -1,9 +1,10 @@
 import React from 'react'
+import Typing from './components/Typing'
 
 const App = () => {
   return (
     <div>
-      app
+      <Typing />
     </div>
   )
 }
